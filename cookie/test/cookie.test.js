@@ -23,8 +23,8 @@ test('test cookie read', async () => {
  })
 
 test('test cookie write', async () => { 
-    const response = await (await request(app).post("/login")).send({name : "Yossi"})
-    expect(response.get("Set-Cookie").toString()).toBe('Login=Eko; Path=/');
+    const response = await request(app).post("/login").send({name : "Yossi"})
+    expect(response.get("Set-Cookie").toString()).toBe('Login=Yossi; Path=/');
     expect(response.text).toBe('hello Yossi');
  })
 
